@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<page>
+    <!-- clear标签下是需要初始化清除的数据库和数据表-->
+    <clear>
+        <database name="hive_new_copy">
+            <table >new_qiyi_user_vip_copy</table>
+        </database>
+    </clear>
+
+    <!-- excel标签下是测试用例和数据库之间字段的对应关系-->
+    <!-- 其中field标签的name属性是测试用例字段，文本内容是数据表字段-->
+    <excel name="getQiyiVipUserInfo.xlsx">
+        <sheet name="获取爱奇艺会员到期时间接口">
+            <database name="hive_new_copy">
+                <table name="new_qiyi_user_vip_copy">
+                    <field name="userId">user_id</field>
+                    <field name="deadline">deadline</field>
+                </table>
+            </database>
+        </sheet>
+    </excel>
+</page>

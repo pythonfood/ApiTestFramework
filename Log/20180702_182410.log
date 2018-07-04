@@ -1,0 +1,72 @@
+2018-07-02 18:24:10,405- run.py(14)- INFO- ***************INIT DATABASE***************
+2018-07-02 18:24:10,405- testdata.py(85)- INFO- Clear database from xml:CaseDatabase.xml
+2018-07-02 18:24:10,409- mysql.py(42)- INFO- Connect database:hive_new_copy
+2018-07-02 18:24:10,475- mysql.py(56)- INFO- Execute sql:DELETE FROM new_qiyi_user_vip_copy
+2018-07-02 18:24:10,476- mysql.py(98)- INFO- Disconnect database:hive_new_copy
+2018-07-02 18:24:10,476- testdata.py(41)- INFO- Init database from xml:CaseDatabase.xml
+2018-07-02 18:24:10,480- mysql.py(42)- INFO- Connect database:hive_new_copy
+2018-07-02 18:24:10,550- testdata.py(26)- INFO- Read test data from excel:getQiyiVipUserInfo.xlsx
+2018-07-02 18:24:11,645- myexcel.py(21)- INFO- Read exel:getQiyiVipUserInfo.xlsx
+2018-07-02 18:24:11,687- mysql.py(56)- INFO- Execute sql:INSERT new_qiyi_user_vip_copy(user_id,deadline) VALUES(2556456,1524204258)
+2018-07-02 18:24:11,742- mysql.py(56)- INFO- Execute sql:INSERT new_qiyi_user_vip_copy(user_id,deadline) VALUES(2556405,1498290891)
+2018-07-02 18:24:11,744- mysql.py(98)- INFO- Disconnect database:hive_new_copy
+2018-07-02 18:24:11,744- run.py(21)- INFO- ***************TEST START***************
+2018-07-02 18:24:11,745- testsuite.py(28)- INFO- Get test case list from txt:caselist.txt
+2018-07-02 18:24:11,746- testsuite.py(52)- INFO- Run test case.
+2018-07-02 18:24:11,746- testsuite.py(39)- INFO- Set test suite.
+2018-07-02 18:24:11,782- testdata.py(26)- INFO- Read test data from excel:getQiyiVipUserInfo.xlsx
+2018-07-02 18:24:11,801- myexcel.py(21)- INFO- Read exel:getQiyiVipUserInfo.xlsx
+2018-07-02 18:24:11,968- GetQiyiVipUserInfo.py(40)- INFO- Run test case:参数正确，会员时间未过期
+2018-07-02 18:24:11,969- GetQiyiVipUserInfo.py(47)- INFO- url:http://60.206.137.176:18130/api/open/special/qiyiVipInfo/getQiyiVipUserInfo/2556456-1.0.json
+2018-07-02 18:24:11,969- GetQiyiVipUserInfo.py(51)- INFO- headeres:{'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', 'token': 'hk43h5j3j2k3k2'}
+2018-07-02 18:24:11,984- GetQiyiVipUserInfo.py(57)- INFO- status_code:200
+2018-07-02 18:24:11,984- GetQiyiVipUserInfo.py(61)- INFO- response:{'data': {'backgroundPic': None, 'code': 'N00000001', 'count': -1, 'desc': '', 'endDate': None, 'longTime': 1530527052432, 'message': '', 'msg': '', 'result': {'content_desc': None, 'content_id': None, 'deadline': '1524204258', 'iqiyi_userId': '6018122187', 'mac': '143DF2908E31', 'pay_time': None, 'product_desc': None, 'product_type': None, 'sn': 'DBD3310G161101460', 'userId': 2556456}, 'startDate': None, 'startTime': None, 'stringTime': '2018-07-02 18:24:12.432', 'success': True}}
+2018-07-02 18:24:11,984- GetQiyiVipUserInfo.py(40)- INFO- Run test case:参数正确，会员时间已过期
+2018-07-02 18:24:11,985- GetQiyiVipUserInfo.py(47)- INFO- url:http://60.206.137.176:18130/api/open/special/qiyiVipInfo/getQiyiVipUserInfo/2556405-1.0.json
+2018-07-02 18:24:11,985- GetQiyiVipUserInfo.py(51)- INFO- headeres:{'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', 'token': 'hk43h5j3j2k3k2'}
+2018-07-02 18:24:11,994- GetQiyiVipUserInfo.py(57)- INFO- status_code:200
+2018-07-02 18:24:11,995- GetQiyiVipUserInfo.py(61)- INFO- response:{'data': {'backgroundPic': None, 'code': 'N00000001', 'count': -1, 'desc': '', 'endDate': None, 'longTime': 1530527052443, 'message': '', 'msg': '', 'result': {'content_desc': None, 'content_id': None, 'deadline': '1498290891', 'iqiyi_userId': '6013513802', 'mac': '143DF2905E66', 'pay_time': None, 'product_desc': None, 'product_type': None, 'sn': 'DMD3310G160100126', 'userId': 2556405}, 'startDate': None, 'startTime': None, 'stringTime': '2018-07-02 18:24:12.443', 'success': True}}
+2018-07-02 18:24:11,995- GetQiyiVipUserInfo.py(40)- INFO- Run test case:所有参数为空
+2018-07-02 18:24:11,995- GetQiyiVipUserInfo.py(47)- INFO- url:http://60.206.137.176:18130/api/open/special/qiyiVipInfo/getQiyiVipUserInfo/-.json
+2018-07-02 18:24:11,995- GetQiyiVipUserInfo.py(51)- INFO- headeres:{'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', 'token': 'hk43h5j3j2k3k2'}
+2018-07-02 18:24:12,006- GetQiyiVipUserInfo.py(57)- INFO- status_code:200
+2018-07-02 18:24:12,007- GetQiyiVipUserInfo.py(61)- INFO- response:{'data': {'backgroundPic': None, 'code': 'N00000001', 'count': -1, 'desc': '', 'endDate': None, 'longTime': 1530527052454, 'message': '', 'msg': '', 'result': None, 'startDate': None, 'startTime': None, 'stringTime': '2018-07-02 18:24:12.454', 'success': True}}
+2018-07-02 18:24:12,007- GetQiyiVipUserInfo.py(40)- INFO- Run test case:userId为空
+2018-07-02 18:24:12,008- GetQiyiVipUserInfo.py(47)- INFO- url:http://60.206.137.176:18130/api/open/special/qiyiVipInfo/getQiyiVipUserInfo/-1.0.json
+2018-07-02 18:24:12,008- GetQiyiVipUserInfo.py(51)- INFO- headeres:{'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', 'token': 'hk43h5j3j2k3k2'}
+2018-07-02 18:24:12,021- GetQiyiVipUserInfo.py(57)- INFO- status_code:200
+2018-07-02 18:24:12,021- GetQiyiVipUserInfo.py(61)- INFO- response:{'data': {'backgroundPic': None, 'code': 'N00000001', 'count': -1, 'desc': '', 'endDate': None, 'longTime': 1530527052468, 'message': '', 'msg': '', 'result': None, 'startDate': None, 'startTime': None, 'stringTime': '2018-07-02 18:24:12.468', 'success': True}}
+2018-07-02 18:24:12,021- GetQiyiVipUserInfo.py(40)- INFO- Run test case:userId为中文
+2018-07-02 18:24:12,021- GetQiyiVipUserInfo.py(47)- INFO- url:http://60.206.137.176:18130/api/open/special/qiyiVipInfo/getQiyiVipUserInfo/我是参数-1.0.json
+2018-07-02 18:24:12,022- GetQiyiVipUserInfo.py(51)- INFO- headeres:{'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', 'token': 'hk43h5j3j2k3k2'}
+2018-07-02 18:24:12,032- GetQiyiVipUserInfo.py(57)- INFO- status_code:400
+2018-07-02 18:24:12,033- GetQiyiVipUserInfo.py(82)- INFO- response:<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<h1>400 Bad Request</h1>
+<p /><hr />
+<small>
+Resin/4.0.44
+Server: 'app'
+</small>
+</body></html>
+
+2018-07-02 18:24:12,033- GetQiyiVipUserInfo.py(40)- INFO- Run test case:userId为特殊字符
+2018-07-02 18:24:12,033- GetQiyiVipUserInfo.py(47)- INFO- url:http://60.206.137.176:18130/api/open/special/qiyiVipInfo/getQiyiVipUserInfo/#%……&-1.0.json
+2018-07-02 18:24:12,034- GetQiyiVipUserInfo.py(51)- INFO- headeres:{'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', 'token': 'hk43h5j3j2k3k2'}
+2018-07-02 18:24:12,042- GetQiyiVipUserInfo.py(57)- INFO- status_code:404
+2018-07-02 18:24:12,042- GetQiyiVipUserInfo.py(82)- INFO- response:<html>
+<head><title>404 Not Found</title></head>
+<body>
+<h1>404 Not Found</h1>
+/api/open/special/qiyiVipInfo/getQiyiVipUserInfo/ was not found on this server.
+<p /><hr />
+<small>
+Resin/4.0.44
+Server: 'app'
+</small>
+</body></html>
+
+2018-07-02 18:24:12,043- testsuite.py(59)- INFO- Generate test report:TestResult 2018-07-02 18_24_11.html
+2018-07-02 18:24:12,043- run.py(25)- INFO- ***************SEND REPORTS***************
+2018-07-02 18:24:12,128- myemail.py(83)- INFO- Send test report email:TestResult 2018-07-02 18_24_11.html
