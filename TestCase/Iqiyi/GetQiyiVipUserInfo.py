@@ -31,7 +31,7 @@ def testcase_name(testcase_func, param_num, param):
 class TestCase(unittest.TestCase):
     def setUp(self):
         self.myhttp = MyHttp()
-        self.myhttp.write_token()  # 获得最新token写入配置文件
+        #self.myhttp.write_token()  # 获得最新token写入配置文件
 
     def tearDown(self):
         pass
@@ -51,11 +51,11 @@ class TestCase(unittest.TestCase):
         print('* headeres:', self.headers)
         mylog.info('headeres:{}'.format(self.headers))
 
-        response = requests.get(url=self.url, headers=self.headers)
         print('【response】')
+        response = requests.get(url=self.url, headers=self.headers)
 
-        self.assertEqual(status_code, response.status_code)  # 断言状态码
         mylog.info('status_code:{}'.format(status_code))
+        self.assertEqual(status_code, response.status_code)  # 断言状态码
         if status_code == 200:
             res = response.json()  # 状态码200的才解析成json()格式
             print(res)
@@ -63,18 +63,19 @@ class TestCase(unittest.TestCase):
 
             print('【Expect】')
             print('* status_code:', status_code)
-            self.assertEqual(code, res['data']['code'])
             print('* code:', code)
-            self.assertEqual(bool(success), res['data']['success'])
+            self.assertEqual(code, res['data']['code'])
             print('* success:', bool(success))
-            self.assertEqual(message, res['data']['message'])
+            self.assertEqual(bool(success), res['data']['success'])
             print('* message:', message)
+            self.assertEqual(message, res['data']['message'])
             if result == 'null':
-                self.assertEqual(None, res['data']['result'])  # 如果预期result为null,则断言result是否为None
                 print('* result:', None)
+                self.assertEqual(None, res['data']['result'])  # 如果预期result为null,则断言result是否为None
+
             else:
-                self.assertEqual(str(deadline), res['data']['result']['deadline'])  # result不为空，则断言具体字段
                 print('* deadline:', deadline)
+                self.assertEqual(str(deadline), res['data']['result']['deadline'])  # result不为空，则断言具体字段
         else:
             print('【Expect】')
             print('* status_code:', status_code)
